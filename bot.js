@@ -22,9 +22,13 @@ client.on('message', async(msg)=>{
   if( msg.author.lastMessageChannelID === channel && msg.content.includes("/getrole")){
     const role = msg.content.slice(9);
     const member = msg.mentions.members.first();
-  if(role.includes("javascript")){
-        const myRole = msg.guild.roles.cache.find(roleName => roleName.name === 'javascript');
-        member.roles.add(myRole).catch(console.error);
+    if(role.includes("java") && !role.includes("javascript")){ //wants java
+      const myRole = msg.guild.roles.cache.find(roleName => roleName.name === 'java');
+      member.roles.add(myRole).catch(console.error);
+  } 
+  else if(role.includes("javascript")) {
+    const myRole = msg.guild.roles.cache.find(roleName => roleName.name === 'javascript');
+    member.roles.add(myRole).catch(console.error);
   }
   if(role.includes("swift")){
       const myRole = msg.guild.roles.cache.find(roleName => roleName.name === 'swift');
@@ -46,10 +50,7 @@ client.on('message', async(msg)=>{
       const myRole = msg.guild.roles.cache.find(roleName => roleName.name === 'csp');
       member.roles.add(myRole).catch(console.error);
   }
-  if(role.includes("java")){
-      const myRole = msg.guild.roles.cache.find(roleName => roleName.name === 'java');
-      member.roles.add(myRole).catch(console.error);
-  }
+  
      
   }    
 })
