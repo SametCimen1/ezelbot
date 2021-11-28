@@ -23,30 +23,32 @@ client.on('message', async(msg)=>{
     const role = msg.content.slice(9);
     const member = msg.mentions.members.first();
     if(role.includes("java") && !role.includes("javascript")){ //wants java
+      console.log("RUNNING JAVA")
       const myRole = msg.guild.roles.cache.find(roleName => roleName.name === 'java');
       member.roles.add(myRole).catch(console.error);
   } 
   else if(role.includes("javascript")) {
+    console.log("RUNNING JAVASCRIPT")
     const myRole = msg.guild.roles.cache.find(roleName => roleName.name === 'javascript');
     member.roles.add(myRole).catch(console.error);
   }
-  if(role.includes("swift")){
+  else if(role.includes("swift")){
       const myRole = msg.guild.roles.cache.find(roleName => roleName.name === 'swift');
       member.roles.add(myRole).catch(console.error);
   }
-  if(role.includes("python")){
+  else if(role.includes("python")){
     const myRole = msg.guild.roles.cache.find(roleName => roleName.name === 'python');
     member.roles.add(myRole).catch(console.error);
   }
-  if(role.includes("c-cpp")){
+  else if(role.includes("c-cpp")){
     const myRole = msg.guild.roles.cache.find(roleName => roleName.name === 'c-cpp');
     member.roles.add(myRole).catch(console.error);
   }
-  if(role.includes("csa")){
+  else if(role.includes("csa")){
       const myRole = msg.guild.roles.cache.find(roleName => roleName.name === 'csa');
       member.roles.add(myRole).catch(console.error);
   }
-  if(role.includes("csp")){
+  else if(role.includes("csp")){
       const myRole = msg.guild.roles.cache.find(roleName => roleName.name === 'csp');
       member.roles.add(myRole).catch(console.error);
   }
